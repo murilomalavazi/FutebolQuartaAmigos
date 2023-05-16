@@ -1,11 +1,10 @@
 ﻿@page "/jogador"
 
-<h1>Pagina de Jogadores</h1>
+<h2>Lista de Jogadores:</h2>
 
 <RadzenDataGrid AllowFiltering="true" FilterPopupRenderMode="PopupRenderMode.OnDemand" AllowPaging="true" PageSize="30" AllowSorting="true"
-                Data="@jogadores" TItem="Jogador" style="--rz-grid-header-text-transform: none; --rz-grid-header-font-size: 20px;">
+                Data="@jogadores" TItem="Jogador" style="--rz-grid-header-text-transform: none; --rz-grid-header-font-size: 15px;">
     <Columns>
-        <RadzenDataGridColumn Width="10px" TItem="Jogador" Property="id" Title="Item" Filterable="false" Sortable="false" TextAlign="TextAlign.Center"/>
         <RadzenDataGridColumn Width="18px" TItem="Jogador" Property="Nome" Title="Jogador" Filterable="false" Sortable="false" TextAlign="TextAlign.Left" />
         <RadzenDataGridColumn Width="10px" TItem="Jogador" Property="id" Title="Gols" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" />
         <RadzenDataGridColumn Width="10px" TItem="Jogador" Property="id" Title="Vitórias" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" />
