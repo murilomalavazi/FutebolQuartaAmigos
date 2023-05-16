@@ -1,6 +1,6 @@
-﻿@page "/user"
+﻿@page "/jogador"
 
-<h3>User Page</h3>
+<h1>Pagina de Jogadores</h1>
 
 @*<button class="btn btn-success" @onclick="InsertUser">Inserir Usuario</button>*@
 
@@ -8,15 +8,15 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Name</th>
+            <th>Nome</th>
             @*<th></th>*@
         </tr>
     </thead>
     <tbody>
-        @foreach (var user in users)
+        @foreach (var jogador in jogadores)
         {
             <tr>
-                <td>@user.Name</td>
+                <td>@jogador.Nome</td>
                 @*<td><button @onclick="@(e=>DeleteUser(user.Id))">Delete</button></td>*@
             </tr>
         }
