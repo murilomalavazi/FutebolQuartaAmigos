@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using GithubPagesBlazor.Jogadores;
+using GithubPagesBlazor.Jogos;
 
 namespace GithubPagesBlazor.Startup
 {
@@ -15,6 +16,7 @@ namespace GithubPagesBlazor.Startup
             builder.Services.AddHttpClient("HttpMessageHandlers", client => { client.BaseAddress = new Uri(dbApi); });
 
             builder.Services.AddHttpClient<JogadorService>("HttpMessageHandlers");
+            builder.Services.AddHttpClient<JogoService>("HttpMessageHandlers");
         }
     }
 }

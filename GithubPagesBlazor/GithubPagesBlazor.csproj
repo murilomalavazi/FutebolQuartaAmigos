@@ -18,12 +18,4 @@
     <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\Imagens\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\Imagens\logo.jpg" />
-  </ItemGroup>
-
 </Project>
