@@ -9,7 +9,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "GithubPagesBlazor.dll": "sha256-3kETmbSznHES7xro+gxNwBnBIbiq63HZEilKxgk19JY=",
+      "GithubPagesBlazor.dll": "sha256-cI6baVR6VLIvyXi+lqXuVRDm9gm4U68Y4xm5teDsVpA=",
       "Microsoft.AspNetCore.Components.dll": "sha256-LcZ0NB431b2Cgzx9Y4bGLPIHsFHG8Yzq4GGR6zyfZyM=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-NQk5NvA2PkONu8DSvjfW9tJfC4c1FK8lHc5r+5LHwrI=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-bRit\/t2RcLfRrX2McXQ4Ikmvsf2\/CuolhtcG6b24pUU=",
@@ -18,7 +18,7 @@
       "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-Ul5a6ZRE\/bXjEIeA6TPi9eKugLaACyCcHHcAHVEke9k=",
       "Microsoft.Extensions.Configuration.dll": "sha256-abC7KwhdPan+ZxH4wGK5i5l5kUSrJegMlysqfojeGS4=",
       "Microsoft.Extensions.Configuration.Json.dll": "sha256-boSewHLerYdMMQk1EahIMSbAXSrf7Kgky4CGjZ3uuto=",
-      "Microsoft.Extensions.DependencyInjection.Abstractions.dll": "sha256-0+sch6TCRwV9EJEENu6CP1HOn9MTWvG6U1AB6JGNoqA=",
+      "Microsoft.Extensions.DependencyInjection.Abstractions.dll": "sha256-j0qoZPbKrfP4Xo3kGLYKYmyeScfw29g6W9Y+UbOSi4s=",
       "Microsoft.Extensions.DependencyInjection.dll": "sha256-Q4QmurLEmwt8+iD7n8CvUaw\/Xkn7zW9X9hmV0d8qcIk=",
       "Microsoft.Extensions.Http.dll": "sha256-0s0RXXDoDwgr8r1IxC9CXZSQJiCBluBa18ZOmvW5NiI=",
       "Microsoft.Extensions.Logging.Abstractions.dll": "sha256-KvIvxmjncThYQjy22jUitQepXmhf1aUJ\/y5utqYrsqk=",
@@ -45,7 +45,7 @@
       "System.Linq.Expressions.dll": "sha256-iDrOFTeBzFIkXjvE0bgTqC+REKdtrj1Pym1Up\/tAbvc=",
       "System.Linq.Queryable.dll": "sha256-MV2CjE\/dZ3JxFyyRcjC1c+Ueb96sksWP2lMZtYd9+T8=",
       "System.Memory.dll": "sha256-7xWLm7P77KOQli\/VqYlz\/W52Lh9W5QufQRWmhNpQbog=",
-      "System.Net.Http.dll": "sha256-+zCTngB4+8g9mbyq6phtQcbyeo92gW0PyqXiGnkmgMI=",
+      "System.Net.Http.dll": "sha256-3LQ1lkZc3stT6eK3NG8MrZ9kSjHKkLY5YaEvst\/0IhY=",
       "System.Net.Http.Json.dll": "sha256-\/j5YPyOHruNJ4I2+cqltqw5Kt9Z91yhZ+4HNuRIfhso=",
       "System.Net.Primitives.dll": "sha256-Wx9PWW1qXux+cs1kt90zjs9FLB9e+NbwDYm8E+2iCC4=",
       "System.ObjectModel.dll": "sha256-0EudtsiCnvLpZPsB8ik7HHMc44jqle2eZmvgaosVh4s=",
