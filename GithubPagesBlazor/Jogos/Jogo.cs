@@ -10,5 +10,6 @@ namespace GithubPagesBlazor.Jogos
         public int Placar_Preto { get; set; }
         public int Time_Vencedor { get; set; }
         public string formatedData { get; set; }
+        public string formatedTime_Vencedor { get; set; }
     }
 }

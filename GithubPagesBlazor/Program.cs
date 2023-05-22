@@ -2,6 +2,7 @@ using GithubPagesBlazor;
 using GithubPagesBlazor.Startup;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Radzen;
 
 internal class Program
 {
@@ -12,6 +13,8 @@ internal class Program
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
             builder.RootComponents.Add<HeadOutlet>("head::after");
+
+            builder.Services.AddScoped<DialogService>();
 
             builder.RegisterHttpServices();
 

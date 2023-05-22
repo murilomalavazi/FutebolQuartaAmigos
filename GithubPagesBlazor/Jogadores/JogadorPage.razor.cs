@@ -17,7 +17,7 @@ namespace GithubPagesBlazor.Jogadores
 
         public async Task LoadJogadores()
         {
-            jogadores = (await _jogadorService.GetAll()).ToList();
+            jogadores = (await _jogadorService.GetAllPlayers()).ToList();
         }
     }
 }

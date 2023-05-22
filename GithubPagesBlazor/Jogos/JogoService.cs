@@ -14,9 +14,15 @@ namespace GithubPagesBlazor.Jogos
             _httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh5cXZsZ3l1bWpnZHhueHR3a29vIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQyNDcwNTYsImV4cCI6MTk5OTgyMzA1Nn0.kCeg3YQJnQBxCYGr3YIZDGJ1g0jwOJm9LIw9GwP48YI");
         }
 
-        public async Task<IEnumerable<Jogo>> GetAll()
+        public async Task<IEnumerable<Jogo>> GetAllGames()
         {
             return await _httpClient.GetFromJsonAsync<IEnumerable<Jogo>>($"Jogo?select=*");
+        }
+
+        public async Task GetAllGameInfosById(int idJogo)
+        {
+            var result = await _httpClient.GetAsync($"Jogo_x_Jogador?id_Jogo=eq.{idJogo}&select=Gols,Jogo(Data),Jogador(Nome),Time(Cor)");
+            var content = await result.Content.ReadAsStringAsync();
         }
     }
 }
