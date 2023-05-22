@@ -22,7 +22,7 @@ namespace GithubPagesBlazor.Jogos
         public async Task GetAllGameInfosById(int idJogo)
         {
             var result = await _httpClient.GetAsync($"Jogo_x_Jogador?id_Jogo=eq.{idJogo}&select=Gols,Jogo(Data),Jogador(Nome),Time(Cor)");
-            var content = await result.Content.ReadAsStringAsync();
+            //var content = await result.Content.ReadAsStringAsync();
         }
     }
 }

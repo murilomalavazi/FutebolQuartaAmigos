@@ -15,7 +15,14 @@ namespace GithubPagesBlazor.Jogadores
 
         public async Task<IEnumerable<Jogador>> GetAllPlayers()
         {
-            return await _httpClient.GetFromJsonAsync<IEnumerable<Jogador>>($"Jogador?select=*");
+            Task<IEnumerable<Jogador>> Jogadores = _httpClient.GetFromJsonAsync<IEnumerable<Jogador>>($"Jogador?select=*");
+
+            //foreach (Jogador item in await Jogadores)
+            //{
+            //    var result = await _httpClient.GetAsync($"Jogo_x_Jogador?id_Jogador=eq.{item.id}&select=Gols,Jogo(Data,Time_Vencedor),Jogador(Nome),Time(id)");
+            //}
+
+            return await Jogadores;
         }
     }
 }
