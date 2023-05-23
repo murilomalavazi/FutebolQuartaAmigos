@@ -13,16 +13,35 @@ namespace GithubPagesBlazor.Jogadores
             _httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh5cXZsZ3l1bWpnZHhueHR3a29vIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQyNDcwNTYsImV4cCI6MTk5OTgyMzA1Nn0.kCeg3YQJnQBxCYGr3YIZDGJ1g0jwOJm9LIw9GwP48YI");
         }
 
-        public async Task<IEnumerable<Jogador>> GetAllPlayers()
+        public async Task<List<JogadorEstatisticas>> GetAllPlayers()
         {
-            Task<IEnumerable<Jogador>> Jogadores = _httpClient.GetFromJsonAsync<IEnumerable<Jogador>>($"Jogador?select=*");
+            List<JogadorEstatisticas> listaJogadorEstatistica = new List<JogadorEstatisticas>();
 
-            //foreach (Jogador item in await Jogadores)
-            //{
-            //    var result = await _httpClient.GetAsync($"Jogo_x_Jogador?id_Jogador=eq.{item.id}&select=Gols,Jogo(Data,Time_Vencedor),Jogador(Nome),Time(id)");
-            //}
+            IEnumerable<Jogador> Jogadores = await _httpClient.GetFromJsonAsync<IEnumerable<Jogador>>($"Jogador?select=*"); //get all players
 
-            return await Jogadores;
+            foreach (Jogador jogador in Jogadores) //for each player
+            {
+                IEnumerable<Jogador_x_Jogos> jogador_x_jogos = await _httpClient.GetFromJsonAsync<IEnumerable<Jogador_x_Jogos>>($"Jogo_x_Jogador?id_Jogador=eq.{jogador.id}&select=Gols,Jogo(Data,Time_Vencedor),Jogador(Nome),Time(id)"); //get all infos about player and game
+
+                JogadorEstatisticas jogadorEstatistica = new JogadorEstatisticas();
+                jogadorEstatistica.Nome = jogador.Nome;
+
+                foreach (Jogador_x_Jogos allInfos in jogador_x_jogos) //for each game/player
+                {
+                    jogadorEstatistica.Gols += allInfos.Gols;
+                    jogadorEstatistica.Jogos++;
+                    jogadorEstatistica.Vitorias += (allInfos.Jogo.Time_Vencedor == allInfos.Time.id ? 1 : 0);
+                    jogadorEstatistica.Derrotas += (allInfos.Jogo.Time_Vencedor != allInfos.Time.id && allInfos.Time.id != 3 ? 1 : 0);
+                    jogadorEstatistica.Empates += (allInfos.Jogo.Time_Vencedor != allInfos.Time.id && allInfos.Time.id == 3 ? 1 : 0);
+                }
+
+                jogadorEstatistica.Pontos = (jogadorEstatistica.Vitorias * 3) + (jogadorEstatistica.Empates * 1);
+
+                listaJogadorEstatistica.Add(jogadorEstatistica);
+            }
+
+            return listaJogadorEstatistica;
         }
     }
 }
+

@@ -11,7 +11,7 @@ namespace GithubPagesBlazor.Jogos.Components
         [Inject]
         public JogoService _jogoService { get; set; }
 
-        [ParameterAttribute]
+        [Parameter]
         public int DataId { get; set; }
 
         protected override async Task OnInitializedAsync()

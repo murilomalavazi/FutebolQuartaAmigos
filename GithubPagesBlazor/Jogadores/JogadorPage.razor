@@ -3,12 +3,16 @@
 <h2>Lista de Jogadores:</h2>
 
 <RadzenDataGrid AllowFiltering="true" FilterPopupRenderMode="PopupRenderMode.OnDemand" AllowPaging="true" PageSize="30" AllowSorting="true"
-                Data="@jogadores" TItem="Jogador" style="--rz-grid-header-text-transform: none; --rz-grid-header-font-size: 15px;" GridLines="Radzen.DataGridGridLines.Both">
+                Data="@jogadores" TItem="JogadorEstatisticas" style="--rz-grid-header-text-transform: none; --rz-grid-header-font-size: 12px;" GridLines="Radzen.DataGridGridLines.Both" IsLoading=@isLoading>
     <Columns>
-        <RadzenDataGridColumn Width="18px" TItem="Jogador" Property="Nome" Title="Jogador" Filterable="false" Sortable="false" TextAlign="TextAlign.Left" />
-        <RadzenDataGridColumn Width="10px" TItem="Jogador" Property="id" Title="V" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" />
-        <RadzenDataGridColumn Width="10px" TItem="Jogador" Property="id" Title="D" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" />
-        <RadzenDataGridColumn Width="10px" TItem="Jogador" Property="id" Title="E" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" />
-        <RadzenDataGridColumn Width="10px" TItem="Jogador" Property="id" Title="G" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" />
+        <RadzenDataGridColumn Width="30%" TItem="JogadorEstatisticas" Property="Nome" Title="Nome" Filterable="false" Sortable="false" TextAlign="TextAlign.Left" />
+        <RadzenDataGridColumn Width="25%" TItem="JogadorEstatisticas" Property="Pontos" Title="Pontos" Filterable="false" Sortable="true" TextAlign="TextAlign.Center" />
+        <RadzenDataGridColumn Width="25%" TItem="JogadorEstatisticas" Property="Gols" Title="Gols" Filterable="false" Sortable="true" TextAlign="TextAlign.Center" />
+        <RadzenDataGridColumn Width="20%" TItem="JogadorEstatisticas" Property="id" Title="Detalhes" Filterable="false" Sortable="false" TextAlign="TextAlign.Center">
+            <Template Context="JogadorEstatistica">
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" Variant="Variant.Flat" Shade="Shade.Lighter" Icon="pageview" class="m-1" Click=@(() => OpenDialogJogadorPage(JogadorEstatistica)) Text="" />
+            </Template>
+        </RadzenDataGridColumn>
     </Columns>
 </RadzenDataGrid>
+<div class="mb-3"></div>

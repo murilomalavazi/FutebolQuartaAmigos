@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using GithubPagesBlazor.Jogadores.Components;
+using GithubPagesBlazor.Jogos.Components;
+using Microsoft.AspNetCore.Components;
+using Radzen;
 
 namespace GithubPagesBlazor.Jogadores
 {
@@ -6,8 +9,13 @@ namespace GithubPagesBlazor.Jogadores
     {
         [Inject]
         public JogadorService _jogadorService { get; set; }
+        [Inject]
+        public DialogService _dialogService { get; set; }
+        [Parameter]
+        public int DataId { get; set; }
 
-        private List<Jogador> jogadores = new List<Jogador>();
+        bool isLoading = false;
+        private List<JogadorEstatisticas> jogadores = new List<JogadorEstatisticas>();
 
         protected override async Task OnInitializedAsync()
         {
@@ -15,9 +23,26 @@ namespace GithubPagesBlazor.Jogadores
             StateHasChanged();
         }
 
+        async Task ShowLoading()
+        {
+            isLoading = true;
+
+            await Task.Yield();
+
+            isLoading = false;
+        }
+
         public async Task LoadJogadores()
         {
+            await ShowLoading();
             jogadores = (await _jogadorService.GetAllPlayers()).ToList();
+        }
+
+        async Task OpenDialogJogadorPage(JogadorEstatisticas estatistica)
+        {
+            await _dialogService.OpenAsync<DialogJogadorPage>($"DialogJogagor ",
+                  new Dictionary<string, object>() { { "jogadorEstatistica", estatistica } },
+                  new DialogOptions() { Width = "100px", Height = "100px" });
         }
     }
 }

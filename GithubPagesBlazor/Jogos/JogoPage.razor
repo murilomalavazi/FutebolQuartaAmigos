@@ -7,8 +7,8 @@
 <RadzenDataGrid AllowFiltering="true" FilterPopupRenderMode="PopupRenderMode.OnDemand" AllowPaging="true" PageSize="30" AllowSorting="true"
                 Data="@jogos" TItem="Jogo" style="--rz-grid-header-text-transform: none; --rz-grid-header-font-size: 12px;" GridLines="Radzen.DataGridGridLines.Both">
     <Columns>
-        <RadzenDataGridColumn Width="10px" TItem="Jogo" Property="formatedData" Title="Data" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" />
-        <RadzenDataGridColumn Width="10px" TItem="Jogo" Property="formatedTime_Vencedor" Title="Vencedor" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" />
+        <RadzenDataGridColumn Width="10px" TItem="Jogo" Property="formatedData" Title="Data" Filterable="false" Sortable="true" TextAlign="TextAlign.Center" />
+        <RadzenDataGridColumn Width="10px" TItem="Jogo" Property="formatedTime_Vencedor" Title="Vencedor" Filterable="false" Sortable="true" TextAlign="TextAlign.Center" />
         <RadzenDataGridColumn Width="13px" TItem="Jogo" Property="id" Title="Detalhes do jogo" Filterable="false" Sortable="false" TextAlign="TextAlign.Center">
             <Template Context="Jogo">
                 <RadzenButton ButtonStyle="ButtonStyle.Primary" Variant="Variant.Flat" Shade="Shade.Lighter" Icon="pageview" class="m-1" Click=@(() => OpenDialogJogoPage(Jogo.id)) Text="Abrir" />
