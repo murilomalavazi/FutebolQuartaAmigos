@@ -113,11 +113,11 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-nzetuNobzEPRKyw4suGoD3U\/W00c3lUsAhFMPdGUgko=",
+      "hash": "sha256-tgsol\/xVNORrj3sY\/0lgkGhGz+y0ql+cy2g\/tXwQv6s=",
       "url": "_framework\/blazor.boot.json"
     },
     {
-      "hash": "sha256-du393g5LLNEw+i+lvab6VAFbT+4hkJrP9xI78hUE31E=",
+      "hash": "sha256-sWmd4cNx60x0S3NL7wGBPwhENa531tddl94er8p9QmA=",
       "url": "_framework\/GithubPagesBlazor.dll"
     },
     {
@@ -489,5 +489,5 @@
       "url": "_content\/Radzen.Blazor\/Radzen.Blazor.js"
     }
   ],
-  "version": "VVaJyvk1"
+  "version": "U8eqPvZU"
 };
