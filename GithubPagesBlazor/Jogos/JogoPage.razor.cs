@@ -13,6 +13,7 @@ namespace GithubPagesBlazor.Jogos
         [Inject]
         public DialogService _dialogService { get; set; }
 
+        bool isLoading = false;
         private List<Jogo> jogos = new List<Jogo>();
 
         protected override async Task OnInitializedAsync()
@@ -21,8 +22,18 @@ namespace GithubPagesBlazor.Jogos
             StateHasChanged();
         }
 
+        async Task ShowLoading()
+        {
+            isLoading = true;
+
+            await Task.Yield();
+
+            isLoading = false;
+        }
+
         public async Task LoadJogos()
         {
+            await ShowLoading();
             jogos = (await _jogoService.GetAllGames()).ToList();
 
             foreach (var jogo in jogos)
@@ -32,11 +43,11 @@ namespace GithubPagesBlazor.Jogos
             }
         }
 
-        async Task OpenDialogJogoPage(int orderId)
+        async Task OpenDialogJogoPage(Jogo jogoData)
         {
-            await _dialogService.OpenAsync<DialogJogoPage>($"DialogJogo ",
-                  new Dictionary<string, object>() { { "DataId", orderId } },
-                  new DialogOptions() { Width = "100px", Height = "100px" });
+            await _dialogService.OpenAsync<DialogJogoPage>($"Detalhes do jogo",
+                  new Dictionary<string, object>() { { "jogoData", jogoData } },
+                  new DialogOptions() { Width = "100%", Height = "100%" });
         }
 
         public string CorDoTime(int cor)

@@ -11,8 +11,6 @@ namespace GithubPagesBlazor.Jogadores
         public JogadorService _jogadorService { get; set; }
         [Inject]
         public DialogService _dialogService { get; set; }
-        [Parameter]
-        public int DataId { get; set; }
 
         bool isLoading = false;
         private List<JogadorEstatisticas> jogadores = new List<JogadorEstatisticas>();
@@ -40,9 +38,9 @@ namespace GithubPagesBlazor.Jogadores
 
         async Task OpenDialogJogadorPage(JogadorEstatisticas estatistica)
         {
-            await _dialogService.OpenAsync<DialogJogadorPage>($"DialogJogagor ",
+            await _dialogService.OpenAsync<DialogJogadorPage>($"Detalhes do jogador",
                   new Dictionary<string, object>() { { "jogadorEstatistica", estatistica } },
-                  new DialogOptions() { Width = "100px", Height = "100px" });
+                  new DialogOptions() { Width = "100%", Height = "100%" });
         }
     }
 }

@@ -12,7 +12,7 @@ namespace GithubPagesBlazor.Jogos.Components
         public JogoService _jogoService { get; set; }
 
         [Parameter]
-        public int DataId { get; set; }
+        public Jogo jogoData { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
@@ -21,7 +21,7 @@ namespace GithubPagesBlazor.Jogos.Components
 
         public async Task LoadDialogJogo()
         {
-            await _jogoService.GetAllGameInfosById(DataId);
+            await _jogoService.GetAllGameInfosById(jogoData.id);
 
             //formatar dados do objeto(a criar) e manda pra tela
         }
