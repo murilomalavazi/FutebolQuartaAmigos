@@ -36,6 +36,8 @@ namespace GithubPagesBlazor.Jogadores
                 }
 
                 jogadorEstatistica.Pontos = (jogadorEstatistica.Vitorias * 3) + (jogadorEstatistica.Empates * 1);
+                jogadorEstatistica.MediaGols = jogadorEstatistica.Gols == 0 ? 0 : (float)jogadorEstatistica.Gols / jogadorEstatistica.Jogos;
+                jogadorEstatistica.MediaAproveitamento = jogadorEstatistica.Pontos == 0 ? 0 : ((float)jogadorEstatistica.Pontos / (jogadorEstatistica.Jogos * 3)) * 100;
 
                 listaJogadorEstatistica.Add(jogadorEstatistica);
             }
