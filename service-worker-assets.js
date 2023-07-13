@@ -5,6 +5,10 @@
       "url": ".nojekyll"
     },
     {
+      "hash": "sha256-wNPFawfGtVYMRJAKj1yHE3oQ+EW65\/rpTYIctC4URnk=",
+      "url": "404.html"
+    },
+    {
       "hash": "sha256-kfXT+\/7PwnK7UBTMq8\/AX20+soj7u1sV\/U1lCtnmSZI=",
       "url": "css\/app.css"
     },
@@ -69,7 +73,7 @@
       "url": "Imagens\/logoWhite1.jpg"
     },
     {
-      "hash": "sha256-C4GLQJcroYgCHW6FIs5mKNj6zNymQO3ANOOW9AZz7Ck=",
+      "hash": "sha256-HRvS+txM6tNKQhs4dbkXYBwTz+7hxCNvUGYSynhF2Sw=",
       "url": "index.html"
     },
     {
@@ -489,5 +493,5 @@
       "url": "_content\/Radzen.Blazor\/Radzen.Blazor.js"
     }
   ],
-  "version": "bVYTE8tD"
+  "version": "4\/THWTQ1"
 };
