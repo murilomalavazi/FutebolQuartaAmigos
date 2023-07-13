@@ -5,7 +5,7 @@
       "url": ".nojekyll"
     },
     {
-      "hash": "sha256-wNPFawfGtVYMRJAKj1yHE3oQ+EW65\/rpTYIctC4URnk=",
+      "hash": "sha256-kBsKNAxiBwvoEyEDOHp\/YXYvznZlY2gTZM6lbhxdqpM=",
       "url": "404.html"
     },
     {
@@ -493,5 +493,5 @@
       "url": "_content\/Radzen.Blazor\/Radzen.Blazor.js"
     }
   ],
-  "version": "4\/THWTQ1"
+  "version": "Jz6IcSha"
 };
