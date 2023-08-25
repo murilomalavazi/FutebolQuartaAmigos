@@ -21,8 +21,8 @@ namespace GithubPagesBlazor.Jogos
 
         public async Task GetAllGameInfosById(int idJogo)
         {
-            var result = await _httpClient.GetAsync($"Jogo_x_Jogador?id_Jogo=eq.{idJogo}&select=Gols,Jogo(Data),Jogador(Nome),Time(Cor)");
-            //var content = await result.Content.ReadAsStringAsync();
+            IEnumerable<Jogador_x_Jogos> jogador_x_jogos = await _httpClient.GetFromJsonAsync<IEnumerable<Jogador_x_Jogos>>($"Jogo_x_Jogador?id_Jogo=eq.{idJogo}&select=Gols,Jogo(Data),Jogador(Nome),Time(Cor)");
+            //colocar na tela os jogadores e os gols naquele jogo
         }
     }
 }

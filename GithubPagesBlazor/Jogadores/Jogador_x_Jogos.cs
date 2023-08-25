@@ -19,5 +19,6 @@ namespace GithubPagesBlazor.Jogadores
     public class Time
     {
         public int id { get; set; }
+        public string Cor { get; set; }
     }
 }
