@@ -31,8 +31,8 @@ namespace GithubPagesBlazor.Jogadores
                     jogadorEstatistica.Gols += allInfos.Gols;
                     jogadorEstatistica.Jogos++;
                     jogadorEstatistica.Vitorias += (allInfos.Jogo.Time_Vencedor == allInfos.Time.id ? 1 : 0);
-                    jogadorEstatistica.Derrotas += (allInfos.Jogo.Time_Vencedor != allInfos.Time.id && allInfos.Time.id != 3 ? 1 : 0);
-                    jogadorEstatistica.Empates += (allInfos.Jogo.Time_Vencedor != allInfos.Time.id && allInfos.Time.id == 3 ? 1 : 0);
+                    jogadorEstatistica.Derrotas += (allInfos.Jogo.Time_Vencedor != allInfos.Time.id && allInfos.Jogo.Time_Vencedor != 3 ? 1 : 0);
+                    jogadorEstatistica.Empates += (allInfos.Jogo.Time_Vencedor != allInfos.Time.id && allInfos.Jogo.Time_Vencedor == 3 ? 1 : 0);
                 }
 
                 jogadorEstatistica.Pontos = (jogadorEstatistica.Vitorias * 3) + (jogadorEstatistica.Empates * 1);
