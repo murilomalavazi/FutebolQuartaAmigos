@@ -7,7 +7,7 @@ namespace GithubPagesBlazor.Jogos
         public int id { get; set; }
         public DateTime Data { get; set; }
         public int Placar_Branco { get; set; }
-        public int Placar_Preto { get; set; }
+        public int Placar_Azul { get; set; }
         public int Time_Vencedor { get; set; }
         public string formatedData { get; set; }
         public string formatedTime_Vencedor { get; set; }

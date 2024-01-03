@@ -44,6 +44,38 @@ namespace GithubPagesBlazor.Jogadores
 
             return listaJogadorEstatistica;
         }
+
+        public async Task<List<JogadorEstatisticas>> GetAllPlayers2023()
+        {
+            List<JogadorEstatisticas> listaJogadorEstatistica = new List<JogadorEstatisticas>();
+
+            IEnumerable<Jogador> Jogadores = await _httpClient.GetFromJsonAsync<IEnumerable<Jogador>>($"Jogador?select=*"); //get all players
+
+            foreach (Jogador jogador in Jogadores) //for each player
+            {
+                IEnumerable<Jogador_x_Jogos_2023> jogador_x_jogos_2023 = await _httpClient.GetFromJsonAsync<IEnumerable<Jogador_x_Jogos_2023>>($"Jogo_x_Jogador_2023?id_Jogador=eq.{jogador.id}&select=Gols,Jogo_2023(Data,Time_Vencedor),Jogador(Nome),Time(id)"); //get all infos about player and game
+
+                JogadorEstatisticas jogadorEstatistica = new JogadorEstatisticas();
+                jogadorEstatistica.Nome = jogador.Nome;
+
+                foreach (Jogador_x_Jogos_2023 allInfos in jogador_x_jogos_2023) //for each game/player
+                {
+                    jogadorEstatistica.Gols += allInfos.Gols;
+                    jogadorEstatistica.Jogos++;
+                    jogadorEstatistica.Vitorias += (allInfos.Jogo_2023.Time_Vencedor == allInfos.Time.id ? 1 : 0);
+                    jogadorEstatistica.Derrotas += (allInfos.Jogo_2023.Time_Vencedor != allInfos.Time.id && allInfos.Jogo_2023.Time_Vencedor != 3 ? 1 : 0);
+                    jogadorEstatistica.Empates += (allInfos.Jogo_2023.Time_Vencedor != allInfos.Time.id && allInfos.Jogo_2023.Time_Vencedor == 3 ? 1 : 0);
+                }
+
+                jogadorEstatistica.Pontos = (jogadorEstatistica.Vitorias * 3) + (jogadorEstatistica.Empates * 1);
+                jogadorEstatistica.MediaGols = jogadorEstatistica.Gols == 0 ? 0 : (float)jogadorEstatistica.Gols / jogadorEstatistica.Jogos;
+                jogadorEstatistica.MediaAproveitamento = jogadorEstatistica.Pontos == 0 ? 0 : ((float)jogadorEstatistica.Pontos / (jogadorEstatistica.Jogos * 3)) * 100;
+
+                listaJogadorEstatistica.Add(jogadorEstatistica);
+            }
+
+            return listaJogadorEstatistica;
+        }
     }
 }
 

@@ -56,10 +56,10 @@ namespace GithubPagesBlazor.Jogos
             {
                 case 1:
                     return "Branco";
-                case 2:
-                    return "Preto";
                 case 3:
                     return "Empate";
+                case 4:
+                    return "Azul";
                 default:
                     return "Indefinido";
             }
