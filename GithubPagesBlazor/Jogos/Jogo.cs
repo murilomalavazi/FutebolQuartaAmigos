@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using GithubPagesBlazor.Jogadores;
+using System.ComponentModel.DataAnnotations;
 
 namespace GithubPagesBlazor.Jogos
 {
@@ -11,5 +12,6 @@ namespace GithubPagesBlazor.Jogos
         public int Time_Vencedor { get; set; }
         public string formatedData { get; set; }
         public string formatedTime_Vencedor { get; set; }
+        public List<Jogador_x_Jogos> complemento { get; set; }
     }
 }

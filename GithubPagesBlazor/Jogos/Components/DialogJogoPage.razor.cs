@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using GithubPagesBlazor.Jogadores;
+using Microsoft.AspNetCore.Components;
 using Radzen;
 
 namespace GithubPagesBlazor.Jogos.Components
@@ -21,8 +22,6 @@ namespace GithubPagesBlazor.Jogos.Components
 
         public async Task LoadDialogJogo()
         {
-            await _jogoService.GetAllGameInfosById(jogoData.id);
-
             //formatar dados do objeto(a criar) e manda pra tela
         }
     }

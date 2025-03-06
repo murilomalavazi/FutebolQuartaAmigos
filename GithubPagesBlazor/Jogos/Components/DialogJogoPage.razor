@@ -2,6 +2,32 @@
 
 <hr />
 
-<div>Vencedor: @jogoData.formatedTime_Vencedor</div>
-<div>Placar Branco: @jogoData.Placar_Branco</div>
-<div>Placar Azul: @jogoData.Placar_Azul</div>
+<div><b>Vencedor:</b> @jogoData.formatedTime_Vencedor</div>
+<div><b>Placar Branco:</b> @jogoData.Placar_Branco</div>
+<div><b>Placar Azul:</b> @jogoData.Placar_Azul</div>
+
+<hr />
+
+@{
+    int count = 0;
+}
+
+<div><b>Time Branco:</b></div>
+@foreach (var jogador in jogoData.complemento.Where(x => x.Time.id == 1))
+{
+    count++;
+    <div>@count - @jogador.Jogador.Nome</div>
+}
+
+<hr />
+
+@{
+    count = 0;
+}
+
+<div><b>Time Azul:</b></div>
+@foreach (var jogador in jogoData.complemento.Where(x => x.Time.id == 2))
+{
+    count++;
+    <div>@count - @jogador.Jogador.Nome</div>
+}

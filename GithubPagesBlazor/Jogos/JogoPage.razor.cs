@@ -1,4 +1,5 @@
-﻿using GithubPagesBlazor.Jogos.Components;
+﻿using GithubPagesBlazor.Jogadores;
+using GithubPagesBlazor.Jogos.Components;
 using Microsoft.AspNetCore.Components;
 using Radzen;
 using Radzen.Blazor;
@@ -40,6 +41,7 @@ namespace GithubPagesBlazor.Jogos
             {
                 jogo.formatedData = jogo.Data.ToString("dd/MM/yy");
                 jogo.formatedTime_Vencedor = CorDoTime(jogo.Time_Vencedor);
+                jogo.complemento = (await _jogoService.GetAllGameInfosById(jogo.id)).ToList();
             }
         }
 

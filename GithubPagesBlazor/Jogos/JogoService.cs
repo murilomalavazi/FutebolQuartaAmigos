@@ -1,5 +1,6 @@
 ﻿using GithubPagesBlazor.Jogadores;
 using System.Net.Http.Json;
+using System.Reflection.Metadata.Ecma335;
 
 namespace GithubPagesBlazor.Jogos
 {
@@ -19,10 +20,9 @@ namespace GithubPagesBlazor.Jogos
             return await _httpClient.GetFromJsonAsync<IEnumerable<Jogo>>($"Jogo?select=*");
         }
 
-        public async Task GetAllGameInfosById(int idJogo)
+        public async Task<IEnumerable<Jogador_x_Jogos>> GetAllGameInfosById(int idJogo)
         {
-            IEnumerable<Jogador_x_Jogos> jogador_x_jogos = await _httpClient.GetFromJsonAsync<IEnumerable<Jogador_x_Jogos>>($"Jogo_x_Jogador?id_Jogo=eq.{idJogo}&select=Gols,Jogo(Data),Jogador(Nome),Time(Cor)");
-            //colocar na tela os jogadores e os gols naquele jogo
+            return await _httpClient.GetFromJsonAsync<IEnumerable<Jogador_x_Jogos>>($"Jogo_x_Jogador?id_Jogo=eq.{idJogo}&select=Jogo(Data),Jogador(Nome),Time(id,Cor)");
         }
     }
 }
