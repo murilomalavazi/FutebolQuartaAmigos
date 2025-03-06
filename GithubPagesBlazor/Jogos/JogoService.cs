@@ -10,8 +10,8 @@ namespace GithubPagesBlazor.Jogos
         public JogoService(HttpClient httpClient)
         {
             _httpClient = httpClient;
-            _httpClient.DefaultRequestHeaders.Add("apikey", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh5cXZsZ3l1bWpnZHhueHR3a29vIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQyNDcwNTYsImV4cCI6MTk5OTgyMzA1Nn0.kCeg3YQJnQBxCYGr3YIZDGJ1g0jwOJm9LIw9GwP48YI");
-            _httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh5cXZsZ3l1bWpnZHhueHR3a29vIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQyNDcwNTYsImV4cCI6MTk5OTgyMzA1Nn0.kCeg3YQJnQBxCYGr3YIZDGJ1g0jwOJm9LIw9GwP48YI");
+            _httpClient.DefaultRequestHeaders.Add("apikey", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImptYXF0Y2Jra2dmeWdxbHFic3h4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEyNjg1NTcsImV4cCI6MjA1Njg0NDU1N30.nx_JQrbsfjXfccGcWXLnZ0E9BEJfAh3LG_AREbCnIBU");
+            _httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImptYXF0Y2Jra2dmeWdxbHFic3h4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEyNjg1NTcsImV4cCI6MjA1Njg0NDU1N30.nx_JQrbsfjXfccGcWXLnZ0E9BEJfAh3LG_AREbCnIBU");
         }
 
         public async Task<IEnumerable<Jogo>> GetAllGames()

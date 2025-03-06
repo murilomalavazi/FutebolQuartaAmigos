@@ -10,8 +10,6 @@ namespace GithubPagesBlazor.Jogadores
         public int Vitorias { get; set; }
         public int Derrotas { get; set; }
         public int Empates { get; set; }
-        public int Gols { get; set; }
-        public float MediaGols { get; set; }
         public float MediaAproveitamento { get; set; }
 
         public JogadorEstatisticas()
@@ -22,8 +20,6 @@ namespace GithubPagesBlazor.Jogadores
             this.Vitorias = 0;
             this.Derrotas = 0;
             this.Empates = 0;
-            this.Gols = 0;
-            this.MediaGols = 0;
             this.MediaAproveitamento = 0;
         }
     }
